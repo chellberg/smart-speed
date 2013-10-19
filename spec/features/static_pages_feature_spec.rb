@@ -14,6 +14,7 @@ describe "Clicking around", :type => :feature do
    before { visit static_pages_home_path }
    let(:page_title) { 'Home' }
    it_should_behave_like "all static pages"
+   it { should have_content('Lorem') }
    
   end
 
