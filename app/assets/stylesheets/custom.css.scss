@@ -6,7 +6,12 @@
 html,
 body {
   height: 100%;
+  padding-top: 20px;
   /* The html and body elements cannot have any padding or margin. */
+}
+
+.lorem {
+	padding-top: 20px;
 }
 
 /* Wrapper for page content to push down footer */
