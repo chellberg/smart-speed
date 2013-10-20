@@ -1,12 +1,29 @@
 <% provide(:title, "Home") %>
-<div class="jumbotron">
-<h1>Smart Speed</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1>Smart Speed</h1>
 
-<p class="lead">Ever wondered how much to speed on an unfamiliar street? Never wonder again. Get crowdsourced local speed intuition with Smart Speed.</p>
-
-<a class="btn btn-large btn-success" href="#">Whoa, what?</a>
+        <p class="lead">Ever wondered how much to speed on an unfamiliar street? Never wonder again. Get crowdsourced local speed intuition with Smart Speed.</p>
+        <a class="btn btn-large btn-success" href="#">Whoa, what?</a>
+ 	  </div>
+    </div>
+  
 </div>
-
-<div class="lorem">
-<%= render 'layouts/lorem' %>
+<div class="row">
+  <div class="col-md-4">
+    <div class="lorem">
+      <%= render 'layouts/lorem' %>
+    </div>
+  </div>
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-info">
+       <div class="panel-heading">
+         <h3 class="panel-title">Panel title</h3>
+       </div>
+     <div class="panel-body">
+       Panel content
+     </div>
+   </div>
+ </div>
 </div>
