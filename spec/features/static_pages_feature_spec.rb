@@ -20,8 +20,13 @@ describe "Clicking around", :type => :feature do
 
   describe "visiting the about page" do
     before { visit static_pages_about_path }
-    let(:page_title) { 'About' 
-      }
+    let(:page_title) { 'About' }
     it_should_behave_like "all static pages"  
+  end
+  
+  describe "visiting the contact page" do
+    before { visit static_pages_contact_path }
+    let(:page_title) { 'Contact' }
+    it_should_behave_like "all static pages"
   end
 end
