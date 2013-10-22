@@ -1,0 +1,19 @@
+<% provide(:title, "I'd say about #{@guess.speed}") %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+	This guess brought to you by username!
+      </h1>
+    </section>
+  </aside>
+  
+  <div class="col-md-8">
+    <h3>This should probably be a map?</h3>
+    <ol class="guess-stats">
+      <li>Speed limit:<%= @guess.speed_limit %></li>
+	  <li>Speed to go:<%= @guess.speed %></li>
+	  <li>Address:<%= @guess.address %></li>
+    </ol>
+  </div>
+</div>
