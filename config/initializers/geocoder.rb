@@ -1,3 +1,3 @@
 #config/initializers/geocoder.rb
 
-Geocoder.configure( :timeout => 30)
+Geocoder.configure( :timeout => 8)
