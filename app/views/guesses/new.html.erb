@@ -5,6 +5,10 @@
   <div class="col-md-6">
     <%= form_for(@guess) do |f| %>
        <%= render 'shared/error_messages', object: f.object %>
+		
+	   <%= f.label :address %>
+       <%= f.text_field :address %>
+
        <%= f.label :speed_limit %>
        <%= f.text_field :speed_limit %>
 

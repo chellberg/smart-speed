@@ -5,14 +5,21 @@ class GuessesController < ActionController::Base
   end
   
   def show
-    @guess = Guess.find(params[:id])  
+    @guess = Guess.find(params[:id])
   end
   
   def index
     @guesses = Guess.find()
   end
   
-  def create  
+  def create
+    @guess = Guess.new(params[:guess])
+      if @guess.save
+        flash[:success] = "Thanks for sharing your speed intuition with other not-slow drivers!"
+        redirect_to @guess
+      else
+        render 'new'
+      end   
   end
   
   def updated
