@@ -15,18 +15,17 @@ describe "Clicking around", :type => :feature do
    let(:page_title) { 'Home' }
    it_should_behave_like "all static pages"
    it { should have_content('Lorem') }
-   
-  end
 
-  describe "visiting the about page" do
-    before { visit about_path }
-    let(:page_title) { 'About' }
-    it_should_behave_like "all static pages"  
-  end
+      describe "visiting the about page" do
+        before { click_link "About" }
+        let(:page_title) { 'About' }
+        it_should_behave_like "all static pages"  
+      end
   
-  describe "visiting the contact page" do
-    before { visit contact_path }
-    let(:page_title) { 'Contact' }
-    it_should_behave_like "all static pages"
+      describe "visiting the contact page" do
+        before { click_link "Contact" }
+        let(:page_title) { 'Contact' }
+        it_should_behave_like "all static pages"
+      end
   end
 end
