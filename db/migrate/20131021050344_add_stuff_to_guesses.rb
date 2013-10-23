@@ -2,6 +2,7 @@ class AddStuffToGuesses < ActiveRecord::Migration
   def change
     create_table :guesses do |t|
       t.text :notes
+      t.timestamps
     end
     
     add_column :guesses, :street, :string

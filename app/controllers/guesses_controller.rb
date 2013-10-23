@@ -9,7 +9,7 @@ class GuessesController < ApplicationController
   end
   
   def index
-    @guesses = Guess.find()
+    @guesses = Guess.paginate(page: params[:page])
   end
   
   def create

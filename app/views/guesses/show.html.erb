@@ -1,25 +1,20 @@
-<% provide(:title, "I'd say about #{@guess.speed}") %>
+<% provide(:title, "Go #{@guess.speed}") %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-sm-4">
     <section>
-      <h1>
-	This guess brought to you by username!
-      </h1>
+      <h3>
+Keep it around <%= @guess.speed %>
+      </h3>
+
+	<%= render 'guess' %>
+
     </section>
   </aside>
   
-  <div class="col-md-8">
-    <h3>This should probably be a map?</h3>
-    <ol class="guess-stats">
-      <li>Speed limit:<%= @guess.speed_limit %></li>
-	  <li>Speed to go:<%= @guess.speed %></li>
-	  <li>Address:<%= @guess.address %></li>
-	  <li>Nearby guesses: <% if @guess.nearbys(50) %>
-		  <% @guess.nearbys(50).each do |g| %>
-		  <%= link_to(g.address, g) %>
-		  <% end %>
-		<% end %>
-	  </li>
-    </ol>
+  <div class="col-sm-8">
+	<div class="container">
+    <h3>Map</h3>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@guess.latitude}%2C#{@guess.longitude}" %>
+	</div>
   </div>
 </div>

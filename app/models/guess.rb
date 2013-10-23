@@ -10,6 +10,6 @@ class Guess < ActiveRecord::Base
   
   after_validation :geocode
   
-  
+  self.per_page = 3
   
 end

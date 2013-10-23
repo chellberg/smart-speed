@@ -1,33 +1,38 @@
-<% provide(:title, 'Sign up') %>
-<h1>Suggest a speed!</h1>
-<p>The address you choose should be somewhere within the speed limit zone you intend to help gently thwart.</p>
+<% provide(:title, 'Submit') %>
+<div class="row">
+	<div class="alert alert-info">Enter any address or intersection along the speed limit zone. </div>
+</div>
 
 <div class="row">
-  <div class="col-md-12">
-    <%= form_for(@guess) do |f| %>
-       <%= render 'shared/error_messages', object: f.object %>
-		
-	   <%= f.label :address %>
-       <%= f.text_field :address %>
+  	<div class="col-md-offset-3 col-md-6 col-md-offset-3">
+	    <%= form_for(@guess, :html => { class: 'form-horizontal' } ) do |f|%>
+	       <%= render 'shared/error_messages', object: f.object %>
+			<fieldset>	
+				<div class="form-group">
+				    <%= f.label :address %>
+				    <%= f.text_field :address, :class => "form-control", :placeholder => "123 Fake St" %>
+				 </div>
 
-       <%= f.label :speed_limit %>
-       <%= f.text_field :speed_limit %>
+				<div class="form-group">
+				    <%= f.label :speed_limit, :class => "control-label" %>
+				    <%= f.text_field :speed_limit, :class => "form-control", :type => "number", :placeholder => 35 %>
+				 </div>
 
-       <%= f.label :speed %>
-       <%= f.text_field :speed %>
+				<div class="form-group">
+				    <%= f.label :speed, :class => "control-label"	  %>
+				    <%= f.text_field :speed, :class => "form-control", :type => "number", :placeholder => 46  %>
+				    </div>
 
-       <%= f.label :street %>
-       <%= f.text_field :street %>
+				<div class="form-group">
+				    <%= f.label :notes, :class => "control-label" %>
+				    <%= f.text_area :notes, :class => "input-xlarge", :placeholder => "Watch out for the school zone..." %>
+				</div>
+
+				<div class="form-actions">
+				<%= f.submit "I solemnly swear that this is good advice", class: "btn btn-lrg btn-primary" %>
+				</div>
+	       </fieldset>
+										      	 <% end %>
        
-	   <%= f.label :city %>
-       <%= f.text_field :city %>
-
-	   <%= f.label :state %>
-       <%= f.text_field :state %>
-
-
-       <%= f.submit "I solemnly swear that this is good advice", class: "btn btn-large btn-primary	" %>
-    <% end %>
-       
-  </div>
+</div>
 </div>

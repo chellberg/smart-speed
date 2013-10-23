@@ -1,30 +1,32 @@
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="/">Smart Speed</a>
-            <div class="nav-collapse collapse">
-              <ul class="nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><%= link_to("About", about_path)%></li>
-                <li><%= link_to("Contact", contact_path)%></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="nav-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>        <!--/.nav-collapse -->
-          </div>
-        </div>
-      </div>
+ <nav class="navbar navbar-default" role="navigation">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	     <%= link_to("Smart Speed", root_path, :class => "navbar-brand") %>
+	  </div>
+
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse navbar-ex1-collapse">
+	    <ul class="nav navbar-nav">
+	      <li><%= link_to("Home", root_path) %></li>
+	      <li><%= link_to("Submit", :controller => :guesses, :action => :new, "data-toggle" => "tab") %></li>
+	      <li><%= link_to("All guesses", :controller => :guesses, :action => :index) %></li>
+	    </ul>
+		 <ul class="nav navbar-nav navbar-right">
+		      	<li><%= link_to("About", :controller => :static_pages, :action => :about, "data-toggle" => "tab") %></li>
+			    <li><%= link_to("Contact", :controller => :static_pages, :action => :contact, "data-toggle" => "tab" )%>
+		 </ul>
+	    <form class="navbar-form navbar-right" role="search">
+	      <div class="form-group">
+	        <input type="text" class="form-control" placeholder="Find nearby tips">
+	      </div>
+	      <button type="submit" class="btn btn-default">Submit</button>
+	    </form>
+	   
+	  </div><!-- /.navbar-collapse -->
+	</nav>

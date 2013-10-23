@@ -1,0 +1,13 @@
+<ul class="guess-stats">
+      <li>Speed limit: <%= @guess.speed_limit %></li>
+	  <li>Speed to go: <%= @guess.speed %></li>
+	  <li>Address: <%= @guess.address %></li>
+	  <li>Latitude: <%= @guess.latitude %></li>
+	  <li>Longitude: <%= @guess.longitude %></li>
+	  <li>Nearby guesses: <% if @guess.nearbys(50) %>
+		  <% @guess.nearbys(50).each do |g| %>
+		  <%= link_to(g.address, g) %>
+		  <% end %>
+		<% end %>
+	  </li>
+    </ul>

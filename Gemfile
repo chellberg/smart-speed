@@ -16,8 +16,10 @@ gem 'geocoder'
 gem 'protected_attributes'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass', '~> 2.3.2.1'
+gem 'jquery-rails'  # If using Bootstrap's JS plugins.
+gem 'sass-rails'
+
+gem 'will_paginate', '~> 3.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

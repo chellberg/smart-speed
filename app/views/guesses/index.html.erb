@@ -1,11 +1,13 @@
-<% provide(:title, 'Guesses') %>
+<% provide(:title, 'All guesses') %>
 <h1>All guesses</h1>
 
+<div class="row">
 
-<div class="guesses">
- 
-     <%= render @guesses %> 
- 
+<ul class="guesses">
+  <%= render :partial => 'guesses', locals: { :guesses => @guesses } %>
+	<%= will_paginate @guesses %>
+  <%= page_entries_info @guesses, :model => "guesses" %>
+</ul>
+
 </div>
-
 
