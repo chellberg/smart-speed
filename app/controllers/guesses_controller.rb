@@ -22,9 +22,6 @@ class GuessesController < ApplicationController
       end   
   end
   
-  def updated
-  end
-  
   def destroy
     @guess = Guess.find(params[:id])
     @guess.destroy
