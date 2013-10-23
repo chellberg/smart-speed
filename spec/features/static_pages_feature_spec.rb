@@ -12,9 +12,12 @@ describe "Clicking around", :type => :feature do
     
    before { visit root_url }
    let(:page_title) { 'Home' }
+   
    it_should_behave_like "all static pages"
+   
    it { should have_content('Lorem') }
-
+   it { should_not have_content('Speed Buddy') }
+   
       describe "visiting the about page" do
         before { click_link "About" }
         let(:page_title) { 'About' }
@@ -25,6 +28,11 @@ describe "Clicking around", :type => :feature do
         before { click_link "Contact" }
         let(:page_title) { 'Contact' }
         it_should_behave_like "all static pages"
+      end
+      
+      describe "clicking the jumbotron button" do
+        before { click_button "Submit a speed!" }
+        it { should have_content('Enter any address') }
       end
   end
 end
