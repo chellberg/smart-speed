@@ -4,8 +4,7 @@ ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 
 # Use Geokit
 # gem 'geokit'
@@ -56,8 +55,15 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :production, :deployment do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'capybara', '~> 2.1.0'
   gem 'factory_girl'
   gem 'rspec-rails', '~> 2.14.0'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3' 
 end
