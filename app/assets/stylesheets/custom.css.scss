@@ -6,7 +6,7 @@
 html,
 body {
   height: 100%;
-  padding-top: 20px;
+  padding-top: 30px;
   margin-right: 10%;
   margin-left: 10%;
   /* The html and body elements cannot have any padding or margin. */
@@ -15,12 +15,26 @@ body {
 .jumbotron {
 	margin-right: 5%;
 	marign-left: 5%;
+	background-color: lightslategray;
 }
 
 .lorem {
 	padding-top: 20px;
 	padding-right: 20px;
 	padding-left: 20px;
+}
+
+.navbar-default {
+	background-color: silver;
+	border-color: black;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: black;
+}
+
+.navbar-default .navbar-brand {
+	color: black;
 }
 
 .guess-stats {
@@ -35,6 +49,11 @@ body {
 ul {
 	list-style-type: none;
 	text-align: center;
+	
+	.nearby-guesses {
+		list-style-type: disc;
+		text-align: left;
+	}
 }
 
 /* Wrapper for page content to push down footer */
@@ -56,7 +75,7 @@ ul {
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
-@media (max-width: 767px) {
+@media (max-width: 700px) {
   #footer {
     margin-left: -20px;
     margin-right: -20px;

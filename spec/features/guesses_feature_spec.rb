@@ -54,6 +54,4 @@ describe "Guesses features" do
       end         
     end
   end
-  
-  
 end

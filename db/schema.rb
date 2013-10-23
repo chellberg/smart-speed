@@ -14,15 +14,17 @@
 ActiveRecord::Schema.define(version: 20131021050344) do
 
   create_table "guesses", force: true do |t|
-    t.text    "notes"
-    t.string  "street"
-    t.string  "city"
-    t.string  "state"
-    t.string  "address"
-    t.float   "latitude"
-    t.float   "longitude"
-    t.integer "speed_limit"
-    t.integer "speed"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "speed_limit"
+    t.integer  "speed"
   end
 
 end
