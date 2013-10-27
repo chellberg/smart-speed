@@ -1,28 +1,31 @@
+<div class="col-md-12">	
+	 <div class="panel panel-info">
 	<% @guesses.each do |guess| %>
-<div class="col-md-offset-2 col-md-8 col-md-offset-2">	
-<div class="panel panel-info">
+
+ 
+	
 	<div class="panel-heading">
-		<h3 class="panel-title">
-			<%= link_to("View guess #{guess.id}", guess) %>: <%= guess.speed %>mph in a <%= guess.speed_limit %>mph zone
+	  <h3 class="panel-title">
+		<%= link_to("Guess #{guess.id}", guess) %>: <%= guess.speed %>mph in a <%= guess.speed_limit %>mph zone
 		</h3>
 	</div>
-	<div class="panel-body">
-	<ul class="guesses-stats">
 	
-	    <li>Speed limit: <%= guess.speed_limit %></li>
-		<li>Speed to go: <%= guess.speed %></li>
-		<li>Address: <%= guess.address %></li>
-		<li>Latitude: <%= guess.latitude %></li>
-		<li>Longitude: <%= guess.longitude %></li>
-		<li>Nearby guesses: <% if guess.nearbys(50) %>
-		  <% guess.nearbys(50).each do |g| %>
-		  <%= link_to(g.address, g) %>
-		            <% end %>
-		            <% end %>
-		</li>
-		</div>
-	</ul>       
-	</div>   
-</div>
-</div>
+	<div class="panel-body">
+		
+		<ul class="guesses-stats">
+			<li>Address: <%= guess.address %></li>
+			<li>Nearby guesses: <% if guess.nearbys(50) %>
+			  <% guess.nearbys(50).each do |g| %>
+			  <%= link_to(g.address, g) %>
+			            <% end %>
+			            <% end %> 	</li>		
+     
+
+	   </ul>       
+	</div>
+  	 
   <% end %>
+  </div>
+</div>
+
+
