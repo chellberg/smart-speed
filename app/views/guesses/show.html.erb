@@ -13,8 +13,13 @@ Keep it around <%= @guess.speed %>
   
   <div class="col-sm-8">
 	<div class="container">
-    <h3>Map</h3>
-    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@guess.latitude}%2C#{@guess.longitude}" %>
+      <h3 class="cheader">Map</h3>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@guess.latitude}%2C#{@guess.longitude}" %>
+		<div class="timestamp">Created <%= time_ago_in_words(@guess.created_at) %> ago.
+	    </div>
 	</div>
   </div>
+
+  
+
 </div>
