@@ -7,25 +7,30 @@ html,
 body {
   height: 100%;
   padding-top: 30px;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 4%;
+  margin-left: 2%;
   /* The html and body elements cannot have any padding or margin. */
 }
 
 .jumbotron {
-	margin-right: 5%;
-	marign-left: 5%;
-	background-color: lightslategray;
+	background-color: lightblue;
 }
 
-.lorem {
-	padding-top: 20px;
-	padding-right: 20px;
-	padding-left: 20px;
+.timestamp {
+	padding-top: 10px;
+	text-align: center;
+}
+
+.cheader {
+	text-align: center;
+}
+
+.sidebar {
+	background-color: gray;
 }
 
 .navbar-default {
-	background-color: silver;
+	background-color: lightblue;
 	border-color: black;
 }
 

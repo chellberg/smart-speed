@@ -1,50 +1,36 @@
 <% provide(:title, "Home") %>
   <div class="row">
     <div class="col-md-12">
+	
       <div class="jumbotron">
 	    <div class="container">
 		  <div class="row well well-sm">
 			<div class="container">
-   <h2>Smart Speed</h2>
-     <p class="lead">
+              <h2 class="cheader">Smart Speed</h2>
+                <p class="lead">
 		Ever wondered how much to speed on an unfamiliar street? Never wonder again.
 		Get crowdsourced local speed intuition with Smart Speed.
-     </p>
+                </p>
              </div>
           </div>
-   
-	  </div>
-	<%= button_to [:new_guess], { form_class: "btn btn-primary", method: :get } do %>
-			            Submit a speed!
-	   <% end %>
-	
+	    </div>	
+	<%= button_to [:new_guess], { class: "btn btn-primary", method: :get } do %>
+				            Submit a speed!
+	                            <% end %>	
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-info">
-       <div class="panel-heading">
-         <h3 class="panel-title">Panel title</h3>
-       </div>
-     <div class="panel-body">
- 	   <div class="lorem">
-	      <%= render 'layouts/lorem' %>
-	   </div>
-	 </div>
-   </div>
- </div>
 
- <div class="col-md-6">
-   <div class="panel panel-info">
-     <div class="panel-heading">
-       <h3 class="panel-title">Panel title</h3>
-     </div>
-     <div class="panel-body">
-       <div class="lorem">
+<div class="col-md-12">
+  <div class="panel panel-info">
+    <div class="panel-heading cheader">
+      <h3 class="panel-title">Why should I?</h3>
+    </div>
+  <div class="panel-body">
+    <div class="lorem">
           <%= render 'layouts/lorem' %>
-       </div>
-     </div>
-   </div>
+    </div>
   </div>
 </div>
+
+

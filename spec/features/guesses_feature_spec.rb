@@ -24,6 +24,12 @@ describe "Guesses features" do
 
   end
   
+  describe "Guess view page should have timestamp" do
+    before { visit 'guesses/1' }
+    
+    it { should have_content("Created") }
+  end
+  
   describe "New guess page" do
     before { click_link "Submit" }
     let(:page_title) { 'Submit' }

@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Guess do
   let(:guess) { FactoryGirl.create(:guess) }
+  let(:mixed_case_address) { "809 S Fess Ave, Bloomington, IN" }
+  let!(:newguess) { Guess.new }
   
   subject { guess }
   
@@ -47,4 +49,28 @@ describe Guess do
       end
   end
   
+  describe "email address with mixed case" do
+    before do
+      guess.address = mixed_case_address
+      guess.save
+    end
+    
+    it "should be saved as mixed case" do
+       expect(guess.address).not_to eq mixed_case_address.downcase
+    end 
+  end
+    
+  describe "in the Guess controller" do
+    before do
+        newguess.speed = 55
+        newguess.speed_limit = 45
+        newguess.address = "809 S Fess Ave 47401"
+    end
+
+    it "should create a new guess" do  
+      expect(newguess.save).to change(Guess, :count).by(1)
+    end 
+  end
+  
+
 end

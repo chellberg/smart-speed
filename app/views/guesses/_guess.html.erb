@@ -28,19 +28,20 @@
 	    <h4 class="list-group-item-heading">Notes</h4>
 		<p class="list-group-item-text"><%= @guess.notes %></p>
 	  </li>
-	
+              	 <% if @guess.nearbys(50) %>
 	  <li class="list-group-item">	
 		<h4 class="list-group-heading">Nearby guesses
 			<span class="badge"><%= @guess.nearbys.count %></span>
 		</h4> 
-      <% if @guess.nearbys(50) %>
+      
 	    <p class="list-group-item-text">
 	        <% @guess.nearbys(50).each do |g| %>
 				<ul class="nearby-guesses">
 				  <li><%= link_to(g.address, g) %></li>
 				</ul>
 		    <% end %>
-      <% end %>
+      
 		</p>
 	  </li>
+	<% end %>
     </ul>
