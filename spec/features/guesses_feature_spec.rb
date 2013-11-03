@@ -4,6 +4,7 @@ describe "Guesses features" do
   subject { page }
   before { visit root_url }
   let!(:guess) { FactoryGirl.create(:guess) }
+  let(:template) { FactoryGirl.create(:guess_template) }
   
   shared_examples_for "all guesses pages" do
     it { should have_title(full_title(page_title)) }
@@ -17,8 +18,6 @@ describe "Guesses features" do
     it_should_behave_like "all guesses pages"
     
       it { should have_content(guess.address) }
-      it { should have_content(guess.latitude) }
-      it { should have_content(guess.longitude) }
       it { should have_content(guess.speed) }
       it { should have_content(guess.speed_limit) }
 
@@ -28,6 +27,8 @@ describe "Guesses features" do
     before { visit 'guesses/1' }
     
     it { should have_content("Created") }
+    it { should have_content(40.7143528) }
+    it { should have_content(-74.0059731) }
   end
   
   describe "New guess page" do
