@@ -26,8 +26,13 @@ describe Guess do
     its(:latitude)  { should_not be_nil }
   end
   
-  describe "when address is not present" do
-    before { guess.address = " " }
+  describe "when city is not present" do
+    before { guess.city = " " }
+    it { should_not be_valid }
+  end
+  
+  describe "when state is not present" do
+    before { guess.state = " " }
     it { should_not be_valid }
   end
   

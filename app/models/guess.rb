@@ -4,7 +4,9 @@ class Guess < ActiveRecord::Base
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude, :address => :full_address, :state_code => :state
   
-  validates :address, presence: true, length: { maximum: 100 }
+  validates :street, length: { maximum: 100 }
+  validates :city, presence: true, length: { maximum: 100 }
+  validates :state, presence: true, length: { maximum: 2 }
   validates :speed, presence: true, length: { maximum: 3 }
   validates :speed_limit, presence: true, length: { maximum: 3 }
   
@@ -12,9 +14,9 @@ class Guess < ActiveRecord::Base
   
   self.per_page = 3
   
-#  def address
-#    [street, city, state, country].compact.join(', ')
-#  end
+  def address
+    [street, city, state].compact.join(', ')
+  end
     
   
 end

@@ -23,12 +23,13 @@ describe "Guesses features" do
 
   end
   
-  describe "Guess view page should have timestamp" do
-    before { visit 'guesses/1' }
+  describe "Guess view page" do
+    before { visit "guesses/#{guess.id}" }
     
     it { should have_content("Created") }
-    it { should have_content(40.7143528) }
-    it { should have_content(-74.0059731) }
+    
+    it { should have_content(guess.latitude) }
+    it { should have_content(guess.longitude) }
   end
   
   describe "New guess page" do
@@ -36,7 +37,9 @@ describe "Guesses features" do
     let(:page_title) { 'Submit' }
     it_should_behave_like "all guesses pages"
     
-    it { should have_content("Address") }
+    it { should have_content("Street") }
+    it { should have_content("City") }
+    it { should have_content("State") }
     it { should have_content("Speed limit") }
     it { should have_content("Speed") }
     it { should have_content("Notes") }
@@ -55,7 +58,10 @@ describe "Guesses features" do
     describe "with complete information" do
       before { fill_in 'Speed', with: 55
                fill_in 'Speed limit', with: 45 
-               fill_in 'Address', with: "809 S Fess Ave 47401" }
+               fill_in 'Street', with: "Main St"
+               fill_in 'City', with: "New York"
+               fill_in 'State', with: "NY" }
+               
       it "should create a new guess" do
         expect { click_button "I solemnly swear that this is good advice" }.to change(Guess, :count).by(1)
       end         

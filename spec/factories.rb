@@ -2,7 +2,8 @@ FactoryGirl.define do
   factory :guess do
     speed 68
     speed_limit 55
-    address "New York, NY"
+    city "New York"
+    state "NY"
   end
   
   factory :guess_template do
