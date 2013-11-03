@@ -1,6 +1,7 @@
 class Guess < ActiveRecord::Base
   attr_accessible :address, :latitude, :longitude, :speed_limit, :speed, :street, :city, :state
-  attr_accessible :full_address
+  attr_accessible :full_address, :notes
+  attr_accessor :full_address
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude, :address => :full_address, :state_code => :state
   
