@@ -54,6 +54,12 @@ describe Guess do
     end 
   end
   
+  describe "reverse geocoding" do
+    it "should reverse geocode upon save" 
+  end
+  
+  
+  
   describe "nearbys tests", :pending => true do 
     let(:near) { Guess.create(:address => "455 Woodland Trail Dr, Indianapolis IN", 
                               :speed => 45, :speed_limit => 30) }
