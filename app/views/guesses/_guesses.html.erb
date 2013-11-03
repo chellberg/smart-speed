@@ -13,7 +13,7 @@
 	<div class="panel-body">
 		
 		<ul class="guesses-stats">
-			<li>Address: <%= guess.address %></li>
+			<li>Address: <%= guess.full_address %></li>
 			<li>Nearby guesses: <% if guess.nearbys(50) %>
 			  <% guess.nearbys(50).each do |g| %>
 			  <%= link_to(g.address, g) %>
