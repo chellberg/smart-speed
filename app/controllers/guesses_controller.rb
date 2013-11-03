@@ -12,6 +12,11 @@ class GuessesController < ApplicationController
     @guesses = Guess.paginate(page: params[:page])
   end
   
+  def search
+    @search = Geocoder.coordinates(params[:search])
+    @guesses = Guess.near(@search, 100)
+  end
+  
   def create
     @guess = Guess.new(params[:guess])
       if @guess.save

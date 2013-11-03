@@ -1,0 +1,11 @@
+<% provide(:title, 'Search Results') %>
+<h1>Search Results</h1>
+
+<div class="row">
+
+<ul class="guesses">
+  <%= render :partial => 'guesses', locals: { :guesses => @guesses } %>
+</ul>
+
+</div>
+

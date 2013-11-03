@@ -11,17 +11,23 @@
 	</div>
 	
 	<div class="panel-body">
-		
-		<ul class="guesses-stats">
-			<li>Address: <%= guess.full_address %></li>
-			<li>Nearby guesses: <% if guess.nearbys(50) %>
-			  <% guess.nearbys(50).each do |g| %>
-			  <%= link_to(g.address, g) %>
-			            <% end %>
-			            <% end %> 	</li>		
-     
-
-	   </ul>       
+		<div class="row">
+			<div class="col-xs-8">
+				<ul class="guesses-stats">
+					<li>Address: <%= guess.full_address %></li>
+						<% if guess.nearbys(50) %>
+					<li>Nearby guesses: 
+					  <% guess.nearbys(50).each do |g| %>
+					    <%= link_to(g.full_address, g) %>
+					  <% end %>
+					</li>
+					    <% end %>		
+			   </ul>  
+			</div>
+			<div class="col-xs-4">
+				<%= image_tag "http://maps.google.com/maps/api/staticmap?size=175x130&sensor=false&zoom=14&markers=#{guess.latitude}%2C#{guess.longitude}" %>
+			</div>     
+		</div>
 	</div>
   	 
   <% end %>

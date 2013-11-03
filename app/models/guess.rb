@@ -18,5 +18,12 @@ class Guess < ActiveRecord::Base
     [street, city, state].compact.join(', ')
   end
     
+ # def self.search(search)
+#    if search
+#      find(:all, :conditions => ['full_address LIKE ?', "%#{search}%"])
+#    else
+#      find(:all)
+#    end
+#  end
   
 end
