@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021050344) do
+ActiveRecord::Schema.define(version: 20131103013742) do
 
   create_table "guesses", force: true do |t|
     t.text     "notes"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131021050344) do
     t.float    "longitude"
     t.integer  "speed_limit"
     t.integer  "speed"
+    t.string   "full_address"
   end
 
 end

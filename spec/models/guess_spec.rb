@@ -2,8 +2,9 @@ require 'spec_helper'
 
 describe Guess do
   let(:guess) { FactoryGirl.create(:guess) }
-  let(:mixed_case_address) { "809 S Fess Ave, Bloomington, IN" }
-  let!(:newguess) { Guess.new }
+  let(:mixed_case_address) { "New York, NY" }
+  # let!(:newguess) { Guess.new }
+ 
   
   subject { guess }
   
@@ -25,8 +26,13 @@ describe Guess do
     its(:latitude)  { should_not be_nil }
   end
   
-  describe "when address is not present" do
-    before { guess.address = " " }
+  describe "when city is not present" do
+    before { guess.city = " " }
+    it { should_not be_valid }
+  end
+  
+  describe "when state is not present" do
+    before { guess.state = " " }
     it { should_not be_valid }
   end
   
@@ -40,14 +46,7 @@ describe Guess do
     it { should_not be_valid } 
   end
   
-  describe "nearbys tests" do
-    let(:near) { Guess.create(:address => "455 Woodland Trail Dr, Indianapolis IN", 
-                              :speed => 45, :speed_limit => 30) }
-                              
-      it "should locate nearby guesses" do           
-        guess.nearbys(50).should_not be_nil 
-      end
-  end
+  
   
   describe "email address with mixed case" do
     before do
@@ -56,11 +55,26 @@ describe Guess do
     end
     
     it "should be saved as mixed case" do
-       expect(guess.address).not_to eq mixed_case_address.downcase
+       expect(guess.address).to eq mixed_case_address
     end 
   end
-    
-  describe "in the Guess controller" do
+  
+  describe "reverse geocoding" do
+    it "should reverse geocode upon save" 
+  end
+  
+  
+  
+  describe "nearbys tests", :pending => true do 
+    let(:near) { Guess.create(:address => "455 Woodland Trail Dr, Indianapolis IN", 
+                              :speed => 45, :speed_limit => 30) }
+                              
+      it "should locate nearby guesses" do           
+        guess.nearbys(50).should_not be_nil 
+      end
+  end
+  
+  describe "in the Guess controller", :pending => true do
     before do
         newguess.speed = 55
         newguess.speed_limit = 45
