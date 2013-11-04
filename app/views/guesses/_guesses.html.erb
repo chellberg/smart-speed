@@ -14,8 +14,13 @@
 		<div class="row">
 			<div class="col-xs-8">
 				<ul class="guesses-stats">
+					   <% unless @search.nil? %>
+					<li><%= number_with_precision(guess.distance_from(@search), precision: 2) %> miles from search location</li>
+					<p></p>
+						         <% end %>
 					<li>Address: <%= guess.full_address %></li>
 						<% if guess.nearbys(50) %>
+					<p></p>
 					<li>Nearby guesses: 
 					  <% guess.nearbys(50).each do |g| %>
 					    <%= link_to(g.full_address, g) %>

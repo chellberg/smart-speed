@@ -30,6 +30,8 @@ class GuessesController < ApplicationController
   def destroy
     @guess = Guess.find(params[:id])
     @guess.destroy
+    flash[:success] = "Guess destroyed"
+    redirect_to guesses_url
   end
   
 end
