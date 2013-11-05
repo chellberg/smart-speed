@@ -13,13 +13,13 @@
 	  <!-- Collect the nav links, forms, and other content for toggling -->
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav">
-	      <li><%= link_to("Home", root_path) %></li>
-	      <li><%= link_to("Submit", :controller => :guesses, :action => :new, "data-toggle" => "tab") %></li>
-	      <li><%= link_to("All guesses", :controller => :guesses, :action => :index) %></li>
+	      <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to("Home", root_path) %></li>
+	      <li class="<%= 'active' if current_page?(new_guess_path) %>"><%= link_to("Submit", :controller => :guesses, :action => :new, "data-toggle" => "tab") %></li>
+	      <li class="<%= 'active' if current_page?(guesses_path) %>"><%= link_to("All guesses", :controller => :guesses, :action => :index) %></li>
+		  <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to("About", :controller => :static_pages, :action => :about, "data-toggle" => "tab") %></li>
+		  <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to("Contact", :controller => :static_pages, :action => :contact, "data-toggle" => "tab" )%></li>
 	    </ul>
 		 <ul class="nav navbar-nav navbar-right">
-		      	<li><%= link_to("About", :controller => :static_pages, :action => :about, "data-toggle" => "tab") %></li>
-			    <li><%= link_to("Contact", :controller => :static_pages, :action => :contact, "data-toggle" => "tab" )%>
 		 </ul>
 	    <%= render 'layouts/searchform' %>
 	   
