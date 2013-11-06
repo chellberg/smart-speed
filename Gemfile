@@ -66,4 +66,5 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3' 
+  gem 'guard-rspec', require: false
 end
